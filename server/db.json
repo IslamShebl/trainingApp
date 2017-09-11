@@ -1,0 +1,55 @@
+{
+    "employees":[
+        {
+            "id":"1",
+            "firstName":"Abdulrahman",
+            "lastName":"Alaa",
+            "department":"Dev",
+            "age":1,
+            "image":"location 1"
+        },
+        {
+            "id":"2",
+            "firstName":"Islam",
+            "lastName":"Shebl",
+            "department":"Dev",
+            "age":1,
+            "image":"location 1"
+        },
+        {
+            "id":"3",
+            "firstName":"Mohammed",
+            "lastName":"Gobashy",
+            "department":"Dev",
+            "age":1,
+            "image":"location 1"
+        },
+        {
+            "id":"4",
+            "firstName":"Hamada",
+            "lastName":"Alaa",
+            "department":"Dev",
+            "age":1,
+            "image":"location 1"
+        }
+    ]
+    ,"companies":[
+        {
+            "id":1,
+            "name":"vodafone",
+            "description":"tecommunication company"
+        },
+         {
+            "id":2,
+            "name":"ITWorx",
+            "description":"software company"
+        },
+         {
+            "id":3,
+            "name":"ITI",
+            "description":"learning institute"
+        }
+    ]
+
+
+}
