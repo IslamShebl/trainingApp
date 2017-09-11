@@ -1,0 +1,16 @@
+<div *ngIf="!selectedEmployee&&!createNew&&!IsUpdate&&!DetailsView" >
+<button type="button" class="btn btn-primary" (click)='addEmployee()'>Add Employee</button>
+<vf-employees-list (selectedEmployee)="onViewDetails($event)" 
+(selectedToUpdateEmployee)="enableUpdateView($event)"
+></vf-employees-list>
+</div>
+<div *ngIf="DetailsView">
+<vf-employee-details [id]="selectedEmployee" (backToIndex)="viewIndex()"></vf-employee-details>
+</div>
+<div *ngIf="createNew">
+    <vf-employee-create (backToIndex)="viewIndex()"></vf-employee-create>
+</div>
+
+<div *ngIf="IsUpdate">
+        <vf-employee-edit [id]="selectedtoUpdate" (backToIndex)="viewIndex()"></vf-employee-edit>
+    </div>

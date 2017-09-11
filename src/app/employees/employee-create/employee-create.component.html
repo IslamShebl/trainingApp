@@ -1,0 +1,28 @@
+<h3>{{title}}</h3>
+<div class="row">
+  <div class="col-xs-8">
+    <label>First name</label>
+    <input type="text" [(ngModel)]="firstName" name="firstname" class="form-control"/>
+  </div>
+</div>
+<div class="row">
+    <div class="col-xs-8">
+      <label>Last name</label>
+      <input type="text" [(ngModel)]="lastName" name="lastname" class="form-control"/>
+    </div>
+  </div>
+
+<div class="row">
+    <div class="col-xs-8">
+      <label>Department</label>
+      <input type="text" [(ngModel)]="department" name="department" class="form-control"/>
+    </div>
+  </div>
+<div class="row">
+    <div class="col-xs-8">
+      <label>Age</label>
+      <input type="text" [(ngModel)]="age" name="age" class="form-control"/>
+    </div>
+  </div>
+<button class="btn btn-primary" (click)="addEmployee()">Create</button>
+<button (click)="goBack()" class="btn btn-default">Back</button>
