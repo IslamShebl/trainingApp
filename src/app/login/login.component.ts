@@ -1,21 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import {LogInService} from '../services/login.service';
 import {ConfigService} from '../services/config.service';
-
+import {ToggleInputDirective} from '../sharedcomponents/toggle-input.directive';
 @Component({
   selector: 'vf-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers:[LogInService,ConfigService]
+  providers:[LogInService,ConfigService],
+
 })
 export class LoginComponent implements OnInit {
+  @ViewChild(ToggleInputDirective)input:ToggleInputDirective;
   title='';
-  type='password';
+  type='text';
   showPassword=false;
   Email='';
   Logged=false;
   Password='';
   error='';
+  show=false;
   constructor(private logInService:LogInService,private configService:ConfigService) { }
   ngOnInit() {
   this.title=this.configService.getCofigDetails().LoginPage.title;
@@ -31,5 +34,13 @@ export class LoginComponent implements OnInit {
      // console.log("Failed")
     //}
   }
-
+  toggleShow()
+  {
+    this.show=!this.show;
+    if(this.show){
+      this.input.changeType("text");
+    }else{
+      this.input.changeType("password");
+    }
+  }
 }
