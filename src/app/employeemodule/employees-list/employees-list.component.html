@@ -1,0 +1,28 @@
+<h3>{{title}}</h3>
+<div><table class="table">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Age</th>
+      <th>Department</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of Employees">
+      <td>{{employee.firstName}}</td>
+      <td>{{employee.lastName}}</td>
+      <td>{{employee.age}}</td>
+      <td>{{employee.department}}</td>
+      <td><a [routerLink]="['/employees',employee.id]">Details</a> </td>
+      <td><a [routerLink]="['/employees/edit',employee.id]">Edit</a> </td>
+      <td><a  (click)="deleteEmployee(employee.id)" style="cursor:pointer">Delete</a> </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div>
+</div>

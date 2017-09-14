@@ -1,32 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { HttpModule }    from '@angular/http';
+import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { EmployeesComponent } from './employees/employees.component';
-import { EmployeesListComponent } from './employees/employees-list/employees-list.component';
-import { EmployeeDetailsComponent } from './employees/employee-details/employee-details.component';
-import { HeaderComponent } from './header/header.component';
-import { EmployeeEditComponent } from './employees/employee-edit/employee-edit.component';
-import { EmployeeCreateComponent } from './employees/employee-create/employee-create.component';
-import { ToggleInputDirective } from './sharedcomponents/toggle-input.directive';
-
+import {AppRoutingModule} from './app-routing.module';
+import {LoginModule} from './loginmodule/login.module';
+import {SharedModule} from './sharedmodules/shared.module';
+import {AuthGuard} from './auth-guard.service';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    EmployeesComponent,
-    EmployeesListComponent,
-    EmployeeDetailsComponent,
-    HeaderComponent,
-    EmployeeEditComponent,
-    EmployeeCreateComponent,
-    ToggleInputDirective
+    HomeComponent
+    //,
+    //HeaderComponent
   ],
   imports: [
-    BrowserModule,FormsModule
+    BrowserModule,FormsModule,ReactiveFormsModule,HttpModule
+    ,AppRoutingModule, LoginModule,SharedModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

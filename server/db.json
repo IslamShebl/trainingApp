@@ -1,55 +1,77 @@
 {
-    "employees":[
-        {
-            "id":"1",
-            "firstName":"Abdulrahman",
-            "lastName":"Alaa",
-            "department":"Dev",
-            "age":1,
-            "image":"location 1"
-        },
-        {
-            "id":"2",
-            "firstName":"Islam",
-            "lastName":"Shebl",
-            "department":"Dev",
-            "age":1,
-            "image":"location 1"
-        },
-        {
-            "id":"3",
-            "firstName":"Mohammed",
-            "lastName":"Gobashy",
-            "department":"Dev",
-            "age":1,
-            "image":"location 1"
-        },
-        {
-            "id":"4",
-            "firstName":"Hamada",
-            "lastName":"Alaa",
-            "department":"Dev",
-            "age":1,
-            "image":"location 1"
-        }
-    ]
-    ,"companies":[
-        {
-            "id":1,
-            "name":"vodafone",
-            "description":"tecommunication company"
-        },
-         {
-            "id":2,
-            "name":"ITWorx",
-            "description":"software company"
-        },
-         {
-            "id":3,
-            "name":"ITI",
-            "description":"learning institute"
-        }
-    ]
-
-
+  "employees": [
+    {
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
+      "id": 2,
+      "firstName": "islam",
+      "lastName": "shebl",
+      "department": "DEV19",
+      "age": "1"
+    },
+    {
+      "id": 3,
+      "firstName": "Mohammed",
+      "lastName": "Gobashy",
+      "department": "Dev",
+      "age": 1,
+      "image": "location 1"
+    },
+    {
+      "id": 4,
+      "firstName": "Hamada",
+      "lastName": "Alaa",
+      "department": "Dev",
+      "age": 1,
+      "image": "location 1"
+    },
+    {
+      "id": 776,
+      "firstName": "Abd El Rahman",
+      "department": "DEV1",
+      "lastName": "Bashir",
+      "age": "1"
+    }
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "vodafone",
+      "description": "tecommunication company"
+    },
+    {
+      "id": 2,
+      "name": "ITWorx",
+      "description": "software company"
+    },
+    {
+      "id": 3,
+      "name": "ITI",
+      "description": "learning institute"
+    }
+  ],
+  "config": {
+    "LoginPage": {
+      "title": "Login"
+    },
+    "EmployeeListPage": {
+      "title": "Employees List"
+    },
+    "EmployeeDetailsPage": {
+      "title": "Employee details"
+    },
+    "EmployeeEditPage": {
+      "title": "Edit Employee"
+    },
+    "AddEmployeePage": {
+      "title": "Add new employee"
+    }
+  },
+  "user": {
+    "email": "admin",
+    "password": "123"
+  }
 }

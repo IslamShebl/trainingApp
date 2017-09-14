@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {EmployeeService} from './employees/service/employee.service'
+import {EmployeeService} from './employeemodule/service/employee.service'
 @Component({
   selector: 'vf-root',
   templateUrl: './app.component.html',
