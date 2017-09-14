@@ -1,45 +1,44 @@
-import {Employee} from '../employee.model';
-import {EventEmitter} from '@angular/core';
-import {Http,Headers,Response} from '@angular/http';
-import { Injectable }    from '@angular/core';
-import {Observable} from 'rxjs/Observable'
+import { Employee } from '../employee.model';
+import { EventEmitter } from '@angular/core';
+import { Http, Headers, Response } from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable'
 import 'rxjs/Rx';
-const API_URL='http://localhost:3000/employees/';
-const header =new Headers({'Content-Type':'application/json'})
+import { HttpClient } from '@angular/common/http';
+const API_URL = 'http://localhost:3000/employees/';
+const header = new Headers({ 'Content-Type': 'application/json' })
 
 @Injectable()
-export class EmployeeService{
-    
-constructor(private http:Http){
+export class EmployeeService {
+    employeeListChanged = new EventEmitter<Employee[]>();
+    constructor(private http: HttpClient) {}
+    //Get All Employees
+    getEmployees(): Observable<object> {
+        return this.http.get(API_URL).map((data: Employee[]) => {
+            return data;
+        })
+    }
 
-}
-    employeeListChanged=new EventEmitter<Employee[]>();
-  
-    getEmployees(){
-       return this.http.get(API_URL).map(
-           (response:Response)=>
-           {
-               const data =response.json();
-               return data;
-           }
-       )
+    //Get Employee by Id
+    getEmployee(employeeId):Observable<object> {
+        return this.http.get(API_URL + employeeId).map((data:Employee)=>{
+            return data;
+        })
     }
-    getEmployee(employeeId){
-     return this.http.get(API_URL+employeeId)
+
+    //Update Employee
+    updateEmployee(employee: Employee) {
+        return this.http.put(API_URL + employee.id, employee)
     }
-    updateEmployee(employee:Employee){
-        return this.http.put(API_URL+employee.id,employee,{headers:header})
+
+    //Add Employee
+    addEmployee(employee: Employee) {
+        employee.id = Math.floor(Math.random() * 1000 + Math.random() * 10 + Math.random() * 100);
+        return this.http.post(API_URL, employee)
     }
-    addEmployee(employee:Employee){
-        employee.id=Math.floor(Math.random()*1000+Math.random()*10+Math.random()*100);
-        return this.http.post(API_URL,employee,{headers:header})
-            
-        //this.http.post(API_URL,)
-    }
-    deleteEmployee(id){
-       return this.http.delete(API_URL+id,{headers:header});
-        //this.EmployeeList =this.EmployeeList.filter(employee=>employee.id !==id);
-        
-        //this.employeeListChanged.emit(this.EmployeeList);
+
+    //Delete Employee
+    deleteEmployee(id) {
+        return this.http.delete(API_URL + id);
     }
 } 

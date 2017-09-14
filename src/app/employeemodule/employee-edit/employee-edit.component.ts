@@ -20,13 +20,11 @@ private route :Router)  { }
   ngOnInit() {
     var id=+this.activatedRoute.snapshot.params['id'];
 
-    this.employeeService.getEmployee(id).subscribe((response:Response)=>{
-      const data=response.json();
+    this.employeeService.getEmployee(id).subscribe((response:Employee)=>{
+      const data=response;
       this.employeeData=data;
-      //console.log( data)
     },
   (error)=>console.log(error));
-    //this.employeeData=this.employeeService.getEmployee(id);
     this.title=this.configService.getCofigDetails().EmployeeEditPage.title;
     
   }

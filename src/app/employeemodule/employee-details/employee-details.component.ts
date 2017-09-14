@@ -16,10 +16,9 @@ title="Employee Details"
 
   ngOnInit() {
     const id =+this.activatedRoute.snapshot.params['id'];  
-    this.employeeService.getEmployee(id).subscribe((response:Response)=>{
-      const data=response.json();
+    this.employeeService.getEmployee(id).subscribe((response:Employee)=>{
+      const data=response;
       this.employee=data;
-      //console.log( data)
     },
   (error)=>console.log(error));
  
